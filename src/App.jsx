@@ -42,6 +42,7 @@ function App() {
         }).sort((a, b) => new Date(b.PurchaseDate) - new Date(a.PurchaseDate))
         setData(result);
         setOrignData(result);
+        console.log(result);
     }
     useEffect(() => { fetchData(); }, [])
     useEffect(() => { 싱글블랜드핸들러(); }, [selected])
@@ -180,7 +181,7 @@ function App() {
                         <Grid item xs={isMobile ? 12 : 2} key={item.id} className={CSS.listGroupitem} onClick={() => editBtn(item)}>
                             <Item preference={item.Preference}>
 
-                                <Chart data={[{ type: 'area', name: 'Area', data: [item.Aroma, item.Balance, item.Body, item.Acidity, item.Aftertaste, item.Flavor] }]} height={150} />
+                                <Chart data={[{ type: 'area', name: 'Area', data: [item.Aroma, item.Balance, item.Body, item.Acidity, item.Aftertaste, item.Flavor], pointPlacement: 'on' }]} height={150} />
 
                                 <StyledTypography>{item.Country === '-' ? '' : item.Country}</StyledTypography>
                                 <StyledTypography>{item.Region === '-' ? '' : item.Region}</StyledTypography>

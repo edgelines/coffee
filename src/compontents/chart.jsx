@@ -11,13 +11,15 @@ const Chart = ({ data, height, name }) => {
         chart: { polar: true, height: height, },
         credits: { enabled: false }, title: { text: null },
         pane: {
-            size: "80%"
+            size: "60%",
+            startAngle: 0,
+            endAngle: 360
         },
         xAxis: {
             tickmarkPlacement: "on",
-            min: 0.5,
-            max: 6.5,
-            categories: ['Aroma', 'Balance', 'Body', 'Acidity', 'Aftertaste', 'Flavor',]
+            min: 0,
+            max: 6,
+            categories: ['Aroma', 'Balance', 'Body', 'Acidity', 'Aftertaste', 'Flavor'],
         },
 
         yAxis: {
@@ -32,7 +34,11 @@ const Chart = ({ data, height, name }) => {
         plotOptions: {
             area: {
                 color: '#404040'  // 색상을 파란색이 아닌 다른 색으로 설정
-            }
+            },
+            series: {
+                pointStart: 0,
+
+            },
         }
     })
 
@@ -42,7 +48,7 @@ const Chart = ({ data, height, name }) => {
         setChartOptions({
             series: data,
         })
-        // console.log(data);
+        console.log(data);
     }, [data]);
     return (
         <>

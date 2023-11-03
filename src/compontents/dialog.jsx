@@ -11,7 +11,7 @@ export const DialogComponent = React.memo(({ dialog, form, handleDialogClose, ed
     const [chartData, setChartData] = useState([{ type: 'area', name: 'Area', data: [] }]);
 
     // useEffect(() => { setLocalFormState(form); setChartData([{ type: 'area', name: 'Area', data: [5, 6, 7, 8, 9, 9] }]) }, [form]);
-    useEffect(() => { setLocalFormState(form); setChartData([{ type: 'area', name: 'Area', data: [form.Aroma, form.Balance, form.Body, form.Acidity, form.Aftertaste, form.Flavor] }]) }, [form]);
+    useEffect(() => { setLocalFormState(form); setChartData([{ type: 'area', name: 'Area', data: [form.Aroma, form.Balance, form.Body, form.Acidity, form.Aftertaste, form.Flavor], pointPlacement: 'on' }]) }, [form]);
 
     // Handler
     const handleFormText = (event) => {
