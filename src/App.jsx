@@ -125,7 +125,7 @@ function App() {
     const labelStyle = { fontSize: '13px', textAlign: 'start', color: '#efe9e9ed' }
     const dividerStyle = { borderColor: '#efe9e9ed', mt: 2, mb: 2 }
     return (
-        <Grid container sx={{ mt: '30px' }}>
+        <Grid container sx={{ mt: '30px', p: 1 }}>
             {/* FeedBack SnackBar */}
             <Snackbar
                 anchorOrigin={{ vertical, horizontal }}
@@ -187,7 +187,9 @@ function App() {
                                 <StyledTypography>{item.Region === '-' ? '' : item.Region}</StyledTypography>
                                 <StyledTypography>{item.FarmName === '-' ? '' : item.FarmName}</StyledTypography>
                                 <StyledTypography>{item.Processing === '-' ? '' : item.Processing}</StyledTypography>
-                                <StyledTypography>{item.Store === '-' ? '' : item.Store}</StyledTypography>
+                                {isMobile ? '' :
+                                    <StyledTypography>{item.Store === '-' ? '' : item.Store}</StyledTypography>
+                                }
                                 <StyledTypography>{item.PurchaseDate === '-' ? '' : item.PurchaseDate}</StyledTypography>
 
                             </Item>
