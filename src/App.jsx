@@ -178,7 +178,7 @@ function App() {
             <Grid item xs={isMobile ? 12 : 9} container>
                 <Grid container spacing={3}>
                     {data.map((item) => (
-                        <Grid item xs={isMobile ? 12 : 2} key={item.id} className={CSS.listGroupitem} onClick={() => editBtn(item)}>
+                        <Grid item xs={isMobile ? 12 : 2} key={item.id} className={isMobile ? '' : CSS.listGroupitem} onClick={() => editBtn(item)}>
                             <Item preference={item.Preference}>
 
                                 <Chart data={[{ type: 'area', name: 'Area', data: [item.Aroma, item.Balance, item.Body, item.Acidity, item.Aftertaste, item.Flavor], pointPlacement: 'on' }]} height={150} />
