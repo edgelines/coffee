@@ -1,3 +1,4 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin') //추가
 const common = require('./webpack.common.js');
